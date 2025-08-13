@@ -70,12 +70,12 @@ export default function Dropdown({ name,setProducts,setLoading,setCategory }) {
       </button>
 
       {open && (
-        <div className="absolute left-0 mt-2 w-44 max-h-64 overflow-auto bg-white rounded-md shadow-lg divide-y divide-gray-100 dark:bg-gray-700 z-20">
-          <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+        <div className="absolute left-0 mt-2 w-44 max-h-64 overflow-auto bg-white rounded-md shadow-lg divide-y divide-gray-100 ">
+          <ul className="py-2 text-sm text-gray-700 ">
             {/* All option */}
             <li
               onClick={() => handleCategoryClick("all")}
-              className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              className="cursor-pointer block px-4 py-2 hover:bg-gray-100 "
             >
               All
             </li>
@@ -88,7 +88,7 @@ export default function Dropdown({ name,setProducts,setLoading,setCategory }) {
               <li
                 key={category}
                 onClick={() => handleCategoryClick(category)}
-                className="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="cursor-pointer block px-4 py-2 hover:bg-gray-100 "
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
               </li>

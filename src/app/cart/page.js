@@ -25,7 +25,7 @@ export default function CartPage() {
             {cart.map((item) => (
             <div
                 key={item.id}
-                className="flex items-center justify-between bg-gray-100 dark:bg-gray-700 p-4 rounded-lg"
+                className="flex items-center justify-between bg-gray-100  p-4 rounded-lg"
             >
                 <div className="flex items-center gap-4">
                     <Image
@@ -44,7 +44,7 @@ export default function CartPage() {
                     <p className="text-lg font-semibold">Qty: {item.qty}</p>
                     <button
                         onClick={() => removeFromCart(item.id)}
-                        className="p-2 rounded hover:bg-red-200 dark:hover:bg-red-700 transition"
+                        className="p-2 rounded hover:bg-red-200  transition"
                     >
                         <Trash2 className="w-5 h-5 text-red-500" />
                     </button>
