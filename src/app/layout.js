@@ -2,6 +2,7 @@ import './globals.css'
 import Link from 'next/link'
 import Header from '../components/Header' 
 import { CartProvider } from "@/context/CartContext";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: 'My Website',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <CartProvider>
           <Header />
             <main className="min-h-screen px-4 py-6">{children}</main>
+            <Toaster position="top-right" />
           <Footer />
         </CartProvider>
       </body>

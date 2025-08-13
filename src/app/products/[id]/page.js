@@ -12,6 +12,7 @@ export default function ProductDetail() {
   const [qty, setQty] = useState(1);
   const { addToCart } = useCart();
   
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
