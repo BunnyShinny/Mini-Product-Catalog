@@ -5,14 +5,15 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Dropdown from "./Dropdown";
+import { useCart } from "@/context/CartContext";
 
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
+  const { totalQty,totalTypes } = useCart();
   return (
-    <header className="bg-[#F8F7F7] text-black">
-      <div className="flex justify-center items-center px-6 py-4 border-b border-gray-200">
+    <header className="bg-blue-800 text-white">
+      <div className="flex justify-center items-center px-6 py-4 border-b-[1px] border-[#d5d5d5]">
         <h2 className="text-2xl font-bold">Mini Product Catalog</h2>
 
         <button
@@ -25,7 +26,7 @@ export default function Header() {
       </div>
 
       <nav
-        className={`flex-col sm:flex sm:flex-row sm:justify-center sm:space-x-6 text-lg font-medium border-b border-gray-200 transition-all duration-300 ${
+        className={` bg-[#f8f7f7] text-black flex-col sm:flex sm:flex-row sm:justify-center sm:space-x-6 text-lg font-medium border-b border-gray-200 transition-all duration-300 ${
           isOpen ? "flex" : "hidden"
         } sm:flex`}
       >
@@ -39,11 +40,11 @@ export default function Header() {
 
 
         <Link
-          href="/search"
-          className={`hover:underline p-4 ${pathname === "/search" ? "underline" : ""}`}
+          href="/cart"
+          className={`hover:underline p-4 ${pathname === "/cart" ? "underline" : ""}`}
           onClick={() => setIsOpen(false)}
         >
-          Cart
+          🛒 Cart: {totalTypes}
         </Link>
         
       </nav>

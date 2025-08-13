@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-export default function Dropdown({ name,setProducts,setLoading }) {
+export default function Dropdown({ name,setProducts,setLoading,setCategory }) {
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState([]);
   const dropdownRef = useRef();
@@ -24,8 +24,11 @@ export default function Dropdown({ name,setProducts,setLoading }) {
 
   const handleCategoryClick = async (category) => {
     let link = `https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`;
+    setCategory(category.charAt(0).toUpperCase() + category.slice(1));
     if (category === "all") {
       link = `https://fakestoreapi.com/products`;
+      setCategory('All');
+
     }
 
     setLoading(true); // start loader

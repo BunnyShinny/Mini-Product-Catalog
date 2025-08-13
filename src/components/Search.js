@@ -1,13 +1,11 @@
-export default function search({ products, setProducts, setLoading }) 
+export default function search({ fullProducts, setProducts, setLoading }) 
 {
     const handleSearch = (event) => {
         const query = event.target.value.toLowerCase();
-        console.log(query);
-        const filteredProducts = products.filter(product => 
-            product.title.toLowerCase().includes(query)
+        const filteredProducts = fullProducts.filter(product =>
+        product.title.toLowerCase().includes(query)
         );
         setProducts(filteredProducts);
-        setLoading(false);
     };
     return (
         <div>

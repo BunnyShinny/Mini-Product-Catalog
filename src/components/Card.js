@@ -2,6 +2,8 @@ import Image from "next/image";
 
 export default function Card({product}) 
 {
+  console.log(product.image);
+
     return (
         <a href={`/products/${product.id}`} className="w-auto h-auto cursor-pointer bg-white border border-gray-200 rounded-sm shadow-sm dark:bg-gray-800 dark:border-gray-700 flex flex-col transform transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
             <div href="#" className="p-2 flex justify-center items-center shadow-sm bg-gray-100 dark:bg-gray-700 rounded-t-lg">
@@ -10,7 +12,8 @@ export default function Card({product})
                 alt={product.title}
                 width={400}
                 height={400}
-                style={{ objectFit: 'contain', width: '100px', height:'100px' }}  // or 'cover' depending on your design
+                style={{ objectFit: 'contain', width: '100px', height:'100px' }}
+                unoptimized
                 />
             </div>
             <div className="lg:px-5 px-2 py-2 flex-1 flex flex-col justify-between">
