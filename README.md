@@ -1,9 +1,9 @@
 ## Node.js
 - Required version: `v22.16.0`  
-   - [Download Node.js](https://nodejs.org/) or use **nvm** to manage versions:  
-   ```bash
-   nvm install 22.16.0
-   nvm use 22.16.0
+- [Download Node.js](https://nodejs.org/) or use **nvm** to manage versions:  
+```bash
+nvm install 22.16.0
+nvm use 22.16.0
 ```
      
 ## Getting Started
